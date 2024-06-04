@@ -262,6 +262,7 @@ func tampilDataPinjam(data *[NMAX]dataBuku, dataPinjam *[NMAX]dataPeminjam, sumP
 			fmt.Println(dataPinjam[i].nama)
 			fmt.Println(dataPinjam[i].nomorTelp)
 			fmt.Println(dataPinjam[i].bukuDipinjam.judul)
+			fmt.Println(dataPinjam[i].bukuDipinjam.ISBN)
 		}
 	}
 }
