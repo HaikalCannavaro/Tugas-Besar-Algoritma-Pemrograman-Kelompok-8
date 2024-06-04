@@ -210,7 +210,6 @@ func tampilDataPengarang(data *[NMAX]dataBuku, sumBuku *int) {
 
 	if *sumBuku == 0 {
 		fmt.Println("**Tidak ada buku di perpustakaan**")
-		return
 	}
 	fmt.Println()
 	fmt.Printf("## Terdapat %d buku dalam perpustakaan ##", *sumBuku)
