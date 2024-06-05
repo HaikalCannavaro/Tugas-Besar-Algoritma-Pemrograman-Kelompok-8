@@ -7,7 +7,7 @@ const NMAX = 100
 type dataBuku struct {
 	judul     string
 	pengarang string
-	ISBN      int
+	ISBN      string
 	eksemplar int
 	tersedia  bool
 }
@@ -53,7 +53,7 @@ func cariJudulBuku(data *[NMAX]dataBuku, sumBuku int, inputanJudul string) {
 			fmt.Println("**Buku ditemukan**")
 			fmt.Printf("Judul buku : %s \n", data[i].judul)
 			fmt.Printf("Nama pengarangnya : %s \n", data[i].pengarang)
-			fmt.Printf("Nomor ISBN : %d \n", data[i].ISBN)
+			fmt.Printf("Nomor ISBN : %s \n", data[i].ISBN)
 			fmt.Printf("Banyak eksemplar : %d \n", data[i].eksemplar)
 			fmt.Println()
 			found = true
@@ -73,7 +73,7 @@ func cariPengarangBuku(data *[NMAX]dataBuku, sumBuku int, inputanPengarang strin
 			fmt.Println("**Buku ditemukan**")
 			fmt.Printf("Judul buku : %s \n", data[i].judul)
 			fmt.Printf("Nama pengarangnya : %s \n", data[i].pengarang)
-			fmt.Printf("Nomor ISBN : %d \n", data[i].ISBN)
+			fmt.Printf("Nomor ISBN : %s \n", data[i].ISBN)
 			fmt.Printf("Banyak eksemplar : %d \n", data[i].eksemplar)
 			fmt.Println()
 			found = true
@@ -288,7 +288,7 @@ func pinjamBuku(data *[NMAX]dataBuku, dataPinjam *[NMAX]dataPeminjam, sumBuku in
 		}
 		fmt.Println("**Buku berhasil dipinjam**")
 		data[found].tersedia = false
-		dataPinjam[*sumPinjam].bukuDipinjam.judul = data[found].judul
+		dataPinjam[*sumPinjam].bukuDipinjam = data[found]
 		*sumPinjam++
 	} else if found != -1 && data[found].tersedia == false {
 		fmt.Println("**Buku sedang dipinjam**")
